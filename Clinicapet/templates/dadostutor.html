@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dados Tutores - Vida Pet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Dados Tutores</h1>
+  </header>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tutor in tutores %}
+      <tr>
+        <td>{{ tutor.nome }}</td>
+        <td>{{ tutor.telefone }}</td>
+        <td>{{ tutor.email }}</td>
+        <td>
+          <a href="{{ url_for('editarusuario', id=tutor.id) }}">Editar</a> |
+          <a href="{{ url_for('excluir_tutor', id=tutor.id) }}" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

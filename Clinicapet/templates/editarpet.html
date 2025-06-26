@@ -1,0 +1,81 @@
+
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Pet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+
+<header>
+    <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="50" />
+    <nav>
+      <a href="{{ url_for('index') }}#inicio">Início</a>
+      <a href="{{ url_for('agendamento') }}">Agendamento</a>
+      <a href="{{ url_for('calcularmedicamento') }}">Calculadora de Medicamento</a>
+      <a href="{{ url_for('calcularsoro') }}">Calculadora de Soro</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('cadastrartutor') }}">Cadastrar Tutor</a>
+    </nav>
+  </header>
+<body>
+    <div class="container">
+        <h2>Editar Pet</h2>
+        <form method="POST">
+            <label for="nome">Nome do Pet:</label>
+            <input type="text" id="nome" name="nome" value="{{ pet.nome_pet }}" required>
+
+            <label for="raca">Raça:</label>
+            <input type="text" id="raca" name="raca" value="{{ pet.raca_pet }}" required>
+
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso" step="0.1" value="{{ pet.peso_pet }}" required>
+
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero" required>
+                <option value="Macho" {% if pet.genero == 'Macho' %}selected{% endif %}>Macho</option>
+                <option value="Fêmea" {% if pet.genero == 'Fêmea' %}selected{% endif %}>Fêmea</option>
+            </select>
+
+            <label for="tutor">Nome do Tutor:</label>
+            <input type="text" id="tutor" name="tutor" value="{{ pet.nome_tutor }}" required>
+
+            <label for="telefone">Telefone do Tutor:</label>
+            <input type="tel" id="telefone" name="telefone" value="{{ pet.telefone_tutor }}" required>
+
+            <button type="submit">Salvar</button>
+        </form>
+        <a href="{{ url_for('dadospets') }}" class="voltar"> Voltar</a>
+    </div>
+
+    <div class="link">
+      <a href="/cadastrarpet">Cadastrar novo pet</a>
+  </div>
+
+
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="{{ url_for('static', filename='img/cap.png') }}" alt="Logo CAP" height="50" />
+      </div>
+      <div class="footer-center">
+        <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="40" />
+        <div class="footer-social">
+          <img src="{{ url_for('static', filename='img/whatsasp.png') }}" alt="WhatsApp" />
+          <img src="{{ url_for('static', filename='img/Instagram.png') }}" alt="Instagram" />
+          <img src="{{ url_for('static', filename='img/facebook-rodapé.png') }}" alt="Facebook" />
+        </div>
+        <p>Copyright 2025 © Hospital Vet Popular - Todos os direitos reservados</p>
+      </div>
+      <div class="footer-right">
+        <img src="{{ url_for('static', filename='img/Cachorro-Home-Rodapé.png') }}" alt="Cachorro feliz" height="100" />
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+
