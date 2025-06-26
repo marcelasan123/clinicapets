@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Vida Pet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header>
+    <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="50" />
+    <nav>
+      <a href="{{ url_for('index') }}#inicio">Início</a>
+      <a href="{{ url_for('agendamento') }}">Agendamento</a>
+      <a href="{{ url_for('calcularmedicamento') }}">Calculadora de Medicamento</a>
+      <a href="{{ url_for('calcularsoro') }}">Calculadora de Soro</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('cadastrartutor') }}">Cadastrar</a>
+    </nav>
+  </header>
+
+  <section class="container intro" id="inicio">
+    <div class="intro-text">
+      <h1>Clínica Vida Pet </h1>
+      <div class="home">
+        <div>
+          <p>
+            Vida Pet é uma clínica veterinária especializada e com uma estrutura completa para cuidar do seu animal de
+            estimação.
+            Nossa equipe de veterinários possui anos de experiência no tratamento de doenças graves e oferecemos ao seu
+            bichinho os melhores cuidados e os melhores profissionais.
+          </p>
+          <a href="login" class="login-button">Faça o login!</a>
+        </div>
+        
+       <img src="{{ url_for('static', filename='img/home-img.png') }}" alt="Grupo de cachorros" height="300" />
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="container about" id="sobre">
+    <h2>Quem Somos – Vida Pet</h2>
+    <p>
+      Na Vida Pet, o amor pelos animais é o que nos move! Somos uma clínica veterinária em Birigui, dedicada ao cuidado
+      completo do seu pet, com carinho, respeito e profissionalismo.
+      Nossa missão é oferecer um atendimento de excelência, com uma equipe apaixonada por pets e preparada para cuidar
+      da saúde, bem-estar e qualidade de vida do seu melhor amigo.
+    </p>
+    <img src="" alt="" style="margin-top: 20px; margin-left: 30px; border-radius: 20px;" />
+
+  </section>
+
+  <section class="container services"> 
+  <h2>Nossos serviços</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="{{ url_for('static', filename='img/icone-farmacia.png') }}" alt="Emergência 24h">
+      <h3>Emergência 24 horas</h3>
+    </div>
+    <div class="service-card">
+      <img src="{{ url_for('static', filename='img/icon internação.png') }}" alt="Internação">
+      <h3>Internação</h3>
+    </div>
+    <div class="service-card">
+      <img src="{{ url_for('static', filename='img/icone-loja-conveniencia.png') }}" alt="Laboratório">
+      <h3>Laboratório</h3>
+    </div>
+    <div class="service-card">
+      <img src="{{ url_for('static', filename='img/icone vacina.png') }}" alt="Vacinação">
+      <h3>Vacinas</h3>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="{{ url_for('static', filename='img/cap.png') }}" alt="Logo CAP" height="50" />
+      </div>
+      <div class="footer-center">
+        <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="80" />
+        <div class="footer-social">
+          <img src="{{ url_for('static', filename='img/whatsasp.png') }}" alt="WhatsApp" />
+          <img src="{{ url_for('static', filename='img/Instagram.png') }}" alt="Instagram" />
+          <img src="{{ url_for('static', filename='img/facebook-rodapé.png') }}" alt="Facebook" />
+        </div>
+        <p>Clinica Vida Pet - Todos os direitos reservados</p>
+      </div>
+      <div class="footer-right">
+        <img src="{{ url_for('static', filename='img/Cachorro-Home-Rodapé.png') }}" alt="Cachorro feliz" height="200" />
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

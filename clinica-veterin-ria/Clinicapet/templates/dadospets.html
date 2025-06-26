@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de Pets - Vida Pet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}" />
+</head>
+<body>
+
+<header>
+    <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="50" />
+    <nav>
+      <a href="{{ url_for('index') }}#inicio">Início</a>
+      <a href="{{ url_for('agendamento') }}">Agendamento</a>
+      <a href="{{ url_for('calcularmedicamento') }}">calculadora de medicamento</a>
+      <a href="{{ url_for('calcularsoro') }}">calculadora de soro</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('cadastrartutor') }}">cadastrar tutor</a>
+    </nav>
+  </header>
+
+
+<div class="container">
+  <h2>Lista de Pets</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  {% if pets %}
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Raça</th>
+          <th>Peso (kg)</th>
+          <th>Gênero</th>
+          <th>Tutor</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pet in pets %}
+        <tr>
+          <td>{{ pet.nome_pet }}</td>
+          <td>{{ pet.raca_pet }}</td>
+          <td>{{ pet.peso_pet }}</td>
+          <td>{{ pet.genero }}</td>
+          <td>{{ pet.nome_tutor }}</td>
+          <td>{{ pet.telefone_tutor }}</td>
+          <td>
+            <a href="{{ url_for('editar', id=pet.id) }}" class="btn_edit botaozin">Editar</a>
+            <a href="{{ url_for('excluir', id=pet.id) }}" class="btn_delete" onclick="return confirm('Tem certeza que deseja excluir este pet?');">Excluir</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>Nenhum pet cadastrado ainda.</p>
+  {% endif %}
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="{{ url_for('static', filename='img/cap.png') }}" alt="Logo CAP" height="50" />
+      </div>
+      <div class="footer-center">
+        <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="80" />
+        <div class="footer-social">
+          <img src="{{ url_for('static', filename='img/whatsasp.png') }}" alt="WhatsApp" />
+          <img src="{{ url_for('static', filename='img/Instagram.png') }}" alt="Instagram" />
+          <img src="{{ url_for('static', filename='img/facebook-rodapé.png') }}" alt="Facebook" />
+        </div>
+        <p>Clinica Vida Pet - Todos os direitos reservados</p>
+      </div>
+      <div class="footer-right">
+        <img src="{{ url_for('static', filename='img/Cachorro-Home-Rodapé.png') }}" alt="Cachorro feliz" height="200" />
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+</html>

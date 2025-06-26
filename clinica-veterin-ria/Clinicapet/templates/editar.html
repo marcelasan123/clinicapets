@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Editar Consulta - Vida Pet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}" />
+</head>
+<body>
+
+<header>
+    <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="50" />
+    <nav>
+      <a href="{{ url_for('index') }}#inicio">Início</a>
+      <a href="{{ url_for('agendamento') }}">Agendamento</a>
+      <a href="{{ url_for('calcularmedicamento') }}">Calculadora de Medicamento</a>
+      <a href="{{ url_for('calcularsoro') }}">Calculadora de Soro</a>
+      <a href="{{ url_for('login') }}">Login</a>
+      <a href="{{ url_for('cadastrartutor') }}">Cadastrar</a>
+    </nav>
+  </header>
+
+<div class="container">
+  <h2>Editar Consulta</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<form action="{{ url_for('editar_agendamento', id=id) }}" method="POST">
+   <label>Nome:</label>
+  <input type="text" name="nome" value="{{ consulta['nome'] }}" required><br>
+
+
+  <label>Celular:</label>
+  <input type="text" name="celular" value="{{ consulta['celular'] }}" required><br>
+
+  <label>Email:</label>
+  <input type="email" name="email" value="{{ consulta['email'] }}" required><br>
+
+  <label>Espécie:</label>
+  <input type="text" name="especie" value="{{ consulta['especie'] }}" required><br>
+
+  <label>Data e Hora:</label>
+  <input type="datetime-local" name="data_hora" value="{{ consulta['data_hora'] }}" required><br>
+
+  <label>Nome do Pet:</label>
+  <input type="text" name="nome_pet" value="{{ consulta['nome_pet'] }}" required><br>
+
+  <button type="submit" class="btn_submit">Salvar Alterações</button>
+</form>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="{{ url_for('static', filename='img/cap.png') }}" alt="Logo CAP" height="50" />
+      </div>
+      <div class="footer-center">
+        <img src="{{ url_for('static', filename='img/logo (1).png') }}" alt="Logo Vida Pet" height="80" />
+        <div class="footer-social">
+          <img src="{{ url_for('static', filename='img/whatsasp.png') }}" alt="WhatsApp" />
+          <img src="{{ url_for('static', filename='img/Instagram.png') }}" alt="Instagram" />
+          <img src="{{ url_for('static', filename='img/facebook-rodapé.png') }}" alt="Facebook" />
+        </div>
+        <p>Clinica Vida Pet - Todos os direitos reservados</p>
+      </div>
+      <div class="footer-right">
+        <img src="{{ url_for('static', filename='img/Cachorro-Home-Rodapé.png') }}" alt="Cachorro feliz" height="200" />
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

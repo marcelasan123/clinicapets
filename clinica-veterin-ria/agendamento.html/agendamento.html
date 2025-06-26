@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento | Vida Pet</title>
+    <link rel="stylesheet" href="static/css/estilo.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Vida Pet">
+        </div>
+        <nav>
+            <a href="#">Inicial</a>
+            <a href="#">Agendamento</a>
+            <a href="#">Sobre</a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram" class="icon"></a>
+        </nav>
+    </header>
+
+  
+    <main>
+        <h1>Agendamento de consultas <span class="emoji">🐾</span></h1>
+
+        <form class="form">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="celular">Celular:</label>
+            <div class="input-celular">
+                <span class="flag">🇧🇷</span>
+                <input type="tel" id="celular" name="celular" required>
+            </div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <div class="check-container">
+                <div>
+                    <p>Seus pets são?</p>
+                    <label><input type="checkbox" name="pet" value="Cães"> Cães</label><br>
+                    <label><input type="checkbox" name="pet" value="Gatos"> Gatos</label><br>
+                    <label><input type="checkbox" name="pet" value="Outros"> Outros</label>
+                </div>
+                <div class="data">
+                    <label>Data e horário:</label><br>
+                    <input type="text" placeholder="dia/mês/ano ; -- : --">
+                </div>
+            </div>
+
+            <label>Nome do Pet:</label>
+            <input type="text" name="pet1">
+
+            <label>Nome do pet (Se quiser incluir mais de um)</label>
+            <input type="text" name="pet2">
+
+            <label>Nome do pet (Se quiser incluir mais de um)</label>
+            <input type="text" name="pet3">
+
+            <button type="submit" class="agendar-btn">AGENDAR</button>
+        </form>
+    </main>
+
+</body>
+</html>

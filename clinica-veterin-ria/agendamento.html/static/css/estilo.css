@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d6eadf;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #2d6a4f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    border-bottom: 3px solid #000;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+.navbar .icon {
+    height: 20px;
+    vertical-align: middle;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #cbf3d2;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1b4332;
+    font-style: italic;
+}
+
+.emoji {
+    color: #2d6a4f;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    padding: 8px;
+    border: 2px solid #999;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.input-celular {
+    display: flex;
+    align-items: center;
+}
+
+.input-celular .flag {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.check-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.check-container .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agendar-btn {
+    background-color: #52b788;
+    color: white;
+    padding: 12px;
+    margin-top: 25px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 0 #000;
+    transition: background-color 0.3s;
+}
+
+.agendar-btn:hover {
+    background-color: #40916c;
+}
