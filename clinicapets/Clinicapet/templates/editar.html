@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Editar Consulta - Vida Pet</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}" />
+</head>
+<body>
+
+<header>
+  <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Vida Pet" />
+  <nav>
+    <a href="{{ url_for('index') }}">Início</a>
+    <a href="{{ url_for('dadosconsultas') }}">Voltar para Consultas</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Editar Consulta</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<form action="{{ url_for('editar_agendamento', id=id) }}" method="POST">
+   <label>Nome:</label>
+  <input type="text" name="nome" value="{{ consulta['nome'] }}" required><br>
+
+
+  <label>Celular:</label>
+  <input type="text" name="celular" value="{{ consulta['celular'] }}" required><br>
+
+  <label>Email:</label>
+  <input type="email" name="email" value="{{ consulta['email'] }}" required><br>
+
+  <label>Espécie:</label>
+  <input type="text" name="especie" value="{{ consulta['especie'] }}" required><br>
+
+  <label>Data e Hora:</label>
+  <input type="datetime-local" name="data_hora" value="{{ consulta['data_hora'] }}" required><br>
+
+  <label>Nome do Pet:</label>
+  <input type="text" name="nome_pet" value="{{ consulta['nome_pet'] }}" required><br>
+
+  <button type="submit" class="btn_submit">Salvar Alterações</button>
+</form>
+</div>
+
+<footer>
+  <p>© 2025 Clínica Vida Pet</p>
+</footer>
+
+</body>
+</html>
